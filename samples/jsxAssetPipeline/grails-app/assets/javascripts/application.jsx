@@ -5,6 +5,7 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+require('whatwg-fetch/fetch');
 
 var cb = require('commentBox');
 var cl = require('commentList');

@@ -65,6 +65,7 @@ clientDependencies {
         'react-bootstrap'('0.30.3')
         'react'('15.2.1')
         'react-dom'('15.2.1')
+        'whatwg-fetch'('2.0.1')
     }
     installDir = 'grails-app/assets/vendor'
 }
