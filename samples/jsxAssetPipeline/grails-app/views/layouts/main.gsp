@@ -45,7 +45,7 @@
     <g:message code="spinner.alt" default="Loading&hellip;"/>
 </div>
 
-<asset:javascript src="application.jsx"/>
+<asset:javascript src="application.jsx.es6"/>
 
 </body>
 </html>

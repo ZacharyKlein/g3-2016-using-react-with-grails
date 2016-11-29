@@ -1,24 +1,32 @@
-exports.CommentForm = React.createClass({
-  getInitialState: function() {
-    return {author: '', text: ''};
-  },
-  handleAuthorChange: function(e) {
+import React from 'react';
+
+class CommentForm extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {author: '', text: ''};
+  }
+
+  handleAuthorChange(e) {
     this.setState({author: e.target.value});
-  },
-  handleTextChange: function(e) {
+  }
+
+  handleTextChange(e) {
     this.setState({text: e.target.value});
-  },
-  handleSubmit: function(e) {
+  }
+
+  handleSubmit(e) {
     e.preventDefault();
-    var author = this.state.author.trim();
-    var text = this.state.text.trim();
+    const author = this.state.author.trim();
+    const text = this.state.text.trim();
     if (!text || !author) {
       return;
     }
     this.props.onCommentSubmit({author: author, text: text});
     this.setState({author: '', text: ''});
-  },
-  render: function() {
+  }
+
+  render() {
     return (
       <form className="form-inline" onSubmit={this.handleSubmit}>
         <div className="form-group">
@@ -38,8 +46,9 @@ exports.CommentForm = React.createClass({
           />
         </div>
           <input className="btn btn-success" type="submit" value="Post your comment" />
-
       </form>
     );
   }
-});
+}
+
+export default CommentForm;

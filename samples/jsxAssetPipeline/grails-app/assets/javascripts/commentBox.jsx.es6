@@ -1,19 +1,24 @@
-exports.CommentBox = React.createClass({
+import React from 'react';
+import CommentForm from './commentForm.jsx';
 
-  getInitialState: function () {
-    return {comments: []};
-  },
-  componentDidMount: function () {
+class CommentBox extends React.Component {
+  constructor() {
+    super();
+    this.state = {comments: []}
+  }
+
+  componentDidMount() {
     this.loadComments();
-  },
-  loadComments: function () {
-    var _this = this;
+  }
+
+  loadComments() {
+    const _this = this;
     fetch('/api/comments')
       .then(function (response) {
         return response.json()
       }).then(function (json) {
 
-      var comments = json.map(function(j) {
+      const comments = json.map(function(j) {
         console.log(j.id);
         console.log(j.text);
         return {key: j.id, id: j.id, author: j.author, text: j.text}
@@ -26,9 +31,10 @@ exports.CommentBox = React.createClass({
       console.error('Unable to load comments', ex);
       return null;
     })
-  },
-  handleCommentSubmit: function (comment) {
-    var _this = this;
+  }
+
+  handleCommentSubmit(comment) {
+    const _this = this;
     fetch('/api/comments', {
       method: 'POST',
       headers: {
@@ -39,23 +45,26 @@ exports.CommentBox = React.createClass({
       return response.json()
     }).then(function (json) {
       console.log(json);
-      var data = _this.state.comments;
-      var _comment = {id: json.id, author: json.author, text: json.text};
+      let data = _this.state.comments;
+      const _comment = {id: json.id, author: json.author, text: json.text};
       data.push(_comment);
       _this.setState({comments: data});
     }).catch(function (ex) {
       console.error('Unable to load comments', ex);
       return null;
     });
-  },
-  render: function () {
+  }
+
+  render() {
     return (
       <div className="commentBox">
         <h1>Make a comment!</h1>
-        <cf.CommentForm onCommentSubmit={this.handleCommentSubmit}/>
-        <cl.CommentList comments={this.state.comments}/>
+        <CommentForm onCommentSubmit={this.handleCommentSubmit}/>
+        <CommentList comments={this.state.comments}/>
 
       </div>
     );
   }
-});
+}
+
+export default CommentBox;

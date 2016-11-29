@@ -1,12 +1,13 @@
-exports.CommentList = React.createClass({
-  render: function () {
+import React from 'react';
+import Comment from './comment.jsx';
 
-
+class CommentList extends React.Component {
+  render() {
     function renderComment(comment) {
       return (
-        <c.Comment author={comment.author} key={comment.id}>
+        <Comment author={comment.author} key={comment.id}>
           {comment.text}
-        </c.Comment>)
+        </Comment>)
     }
 
     var sortedComments = this.props.comments != undefined ?
@@ -20,4 +21,6 @@ exports.CommentList = React.createClass({
       </div>
     );
   }
-});
+}
+
+export default CommentList;

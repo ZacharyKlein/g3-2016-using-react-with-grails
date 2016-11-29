@@ -76,8 +76,8 @@ grails:
                 scriptlets: html
                 taglib: none
                 staticparts: none
-#    assets:
-#      enableES6: true
+    assets:
+      enableES6: true
 endpoints:
     jmx:
         unique-names: true
