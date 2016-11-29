@@ -4,7 +4,7 @@
  * that begins with a given prefix (typically "on")
  * followed by an uppercase letter.
  */
-var autobind = function autobind(obj, prefix) {
+function autobind(obj, prefix) {
     /* eslint prefer-reflect:0 */
     const re = new RegExp(prefix + '[A-Z]');
     const props = Object.getOwnPropertyNames(Object.getPrototypeOf(obj));
@@ -18,3 +18,6 @@ var autobind = function autobind(obj, prefix) {
         }
     }
 }
+
+export default autobind;
+

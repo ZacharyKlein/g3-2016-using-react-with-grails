@@ -63,7 +63,7 @@
         </p>
 
         <div id="app"></div>
-        <asset:javascript src="bundle.js" />
+        <asset:javascript src="bundle-index.js" />
 
         <div id="controllers" role="navigation">
             <h2>Available Controllers:</h2>

@@ -7,7 +7,9 @@
 //
 //= require jquery-2.2.0.min
 //= require bootstrap
-//= require_tree .
+//Removing this to prevent loading munltiple webpack bundles
+//this can be fixed by using separate asset manifests per
+// webpack bundle/entry//= require_tree .
 //= require_self
 
 if (typeof jQuery !== 'undefined') {

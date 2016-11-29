@@ -1,4 +1,5 @@
 import React from 'react';
+import Immutable from 'immutable'
 import autobind from './util/autobind'
 import {Modal, Button} from 'react-bootstrap';
 
@@ -10,9 +11,10 @@ class About extends React.Component {
         autobind(this, 'toggle');
         
         this.state = {
+            data: Immutable.fromJS({
                 showModal: false
-            };
-
+            })
+        };
     }
 
     toggleModal() {

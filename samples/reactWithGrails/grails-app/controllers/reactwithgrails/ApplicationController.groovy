@@ -12,4 +12,9 @@ class ApplicationController implements PluginManagerAware {
     def index() {
         [grailsApplication: grailsApplication, pluginManager: pluginManager]
     }
+
+
+    def books() {
+
+    }
 }
