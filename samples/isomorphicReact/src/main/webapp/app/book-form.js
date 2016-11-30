@@ -7,7 +7,7 @@ class BookForm extends React.Component {
 
   constructor() {
     super();
-    this.state = { author: '', title: '' };
+    this.state = {author: '', title: ''};
 
     this.handleAuthorChange = this.handleAuthorChange.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -27,26 +27,28 @@ class BookForm extends React.Component {
   }
 
   handleAuthorChange(event) {
-    this.setState({ author: event.target.value });
+    this.setState({author: event.target.value});
   }
 
   handleTitleChange(event) {
-    this.setState({ title: event.target.value });
+    this.setState({title: event.target.value});
   }
 
   render() {
 
-    return(
+    return (
       <div>
         <h3>Add a book:</h3>
-      <form className="form form-inline" onSubmit={this.handleSubmit}  >
-        <label>Title</label>
-        <input className="form-control" name="title" type="text" value={ this.state.title } onChange={ this.handleTitleChange } />
-        <label>Author</label>
-        <input className="form-control" name="author" type="text" value={ this.state.author } onChange={ this.handleAuthorChange }/>
+        <form className="form form-inline" onSubmit={this.handleSubmit}>
+          <label>Title</label>
+          <input className="form-control" name="title" type="text" value={ this.state.title }
+                 onChange={ this.handleTitleChange }/>
+          <label>Author</label>
+          <input className="form-control" name="author" type="text" value={ this.state.author }
+                 onChange={ this.handleAuthorChange }/>
 
-        <input className="btn btn-success"  type="submit" value="Add to library" />
-      </form>
+          <input className="btn btn-success" type="submit" value="Add to library"/>
+        </form>
       </div>
     );
 

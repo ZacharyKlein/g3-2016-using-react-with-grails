@@ -14,7 +14,6 @@ class ApplicationController implements PluginManagerAware {
     }
 
     def books() {
-
-        [books: Book.list()]
+        [bookInstanceList: Book.list()]
     }
 }
