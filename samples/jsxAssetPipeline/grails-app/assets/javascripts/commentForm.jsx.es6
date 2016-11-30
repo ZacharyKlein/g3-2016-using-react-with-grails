@@ -4,6 +4,9 @@ class CommentForm extends React.Component {
 
   constructor() {
     super();
+    this.handleAuthorChange = this.handleAuthorChange.bind(this);
+    this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {author: '', text: ''};
   }
 

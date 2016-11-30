@@ -1,10 +1,12 @@
 import React from 'react';
-import CommentForm from './commentForm.jsx';
+import CommentForm from 'commentForm';
+import CommentList from 'commentList';
 
 class CommentBox extends React.Component {
   constructor() {
     super();
     this.state = {comments: []}
+    this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
   }
 
   componentDidMount() {
