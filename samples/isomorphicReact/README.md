@@ -1,5 +1,12 @@
 #Isomorphic React Sample
 
+##Usage
+
+Check out the project from Github, and run `./gradlew bootRun` to start it up.
+
+Run `./gradlew npm_run_webpack` to run webpack in watch mode and recompile the React code upon changes.
+
+#Explanation
 
 This project demonstrates use of the `grails-isomorphic` plugin (http://plugins.grails.org/plugin/grails-isomorphic) with React. The basic React application code is kept under `src/main/webapp`. It's a simple table list with a form for adding new items (books) to the database.
 
