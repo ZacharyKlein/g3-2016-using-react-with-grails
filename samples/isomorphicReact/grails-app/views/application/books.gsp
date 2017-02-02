@@ -10,7 +10,7 @@
 
 <div id="content" role="main">
     <section class="row colset-2-its">
-        <iso:bundle path="dist/bundle-books.js" data="${[books: bookInstanceList]}" element="books"/>
+        <iso:javascript path="dist/bundle-books.js" data="${[books: bookInstanceList]}" element="books"/>
     </section>
 </div>
 

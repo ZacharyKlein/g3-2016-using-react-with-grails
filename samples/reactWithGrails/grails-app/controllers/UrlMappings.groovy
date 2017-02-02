@@ -1,4 +1,4 @@
-package isomorphic.react
+
 
 class UrlMappings {
 
@@ -9,9 +9,7 @@ class UrlMappings {
             }
         }
 
-        "/"(view: '/index')
-
-        "/books"(controller: 'application', action: 'books')
+        "/"(controller: 'application', action: 'books')
 
         "500"(view: '/error')
         "404"(view: '/notFound')
